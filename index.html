@@ -4,79 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Моя личная страница</title>
-
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Прогресс-бар скролла -->
+    <div class="scroll-progress" id="scroll-progress"></div>
 
     <header class="site-header">
         <nav class="navbar">
             <a href="#" class="logo">Личная страница.</a>
-
             <div class="nav-links">
                 <a href="#about">Обо мне</a>
                 <a href="#interests">Интересы</a>
                 <a href="#stories">Истории</a>
-
-                <button id="theme-toggle" type="button">
-                    Тёмная тема
-                </button>
+                <a href="stories.html">Архив историй</a>
+                <a href="#timer">Секундомер</a>
+                <button id="theme-toggle">Тёмная тема</button>
             </div>
         </nav>
-
-        <div class="hero">
-            <h1>Привет! Я Вова.</h1>
-            <p>Добро пожаловать на мою личную страницу!</p>
-        </div>
     </header>
 
+    <section class="hero">
+        <h1>Привет! Я Вова.</h1>
+        <p>Добро пожаловать на мою личную страницу!</p>
+    </section>
+
     <main>
-        <section id="about" class="about-section">
+        <section id="about" class="about-section fade-in">
             <div class="about-text">
                 <span class="section-label">ЗНАКОМСТВО</span>
-
                 <h2>Немного обо мне</h2>
-
                 <p>
                     Привет! Это моя личная страница,
                     где я делюсь тем, что мне интересно,
                     рассказываю о своих увлечениях
                     и сохраняю небольшие истории.
                 </p>
-
-                <a href="#interests" class="about-link">
-                    Мои интересы →
-                </a>
+                <a href="#interests" class="about-link">Мои интересы →</a>
             </div>
-
             <div class="about-image">
-                <img
-                    src="images/avatar-v.jpg"
-                    alt="Цветной ковёр числа «е»"
-                >
+                <img src="images/avatar-v.jpg" alt="Иллюстрация">
             </div>
         </section>
 
-        <section id="interests">
+        <section id="interests" class="fade-in">
+            <span class="section-label">УВЛЕЧЕНИЯ</span>
             <h2>Мои интересы</h2>
-
             <p class="interests-intro">
                 Здесь я собрал несколько увлечений,
                 которые занимают особое место в моей жизни.
                 Нажми на интересующую карточку,
                 чтобы узнать о ней подробнее.
             </p>
-
             <div class="interests-grid">
-
-                <!-- Спидкубинг -->
                 <details class="interest-card">
                     <summary>
                         <span class="interest-number">01</span>
-                        <span class="interest-title">
-                            Спидкубинг
-                        </span>
+                        <span class="interest-title">Спидкубинг</span>
                         <span class="interest-short">
                             Почти 9 лет собираю кубик Рубика
                             и другие головоломки на скорость.
@@ -86,15 +70,13 @@
                             <span class="more-open">Свернуть −</span>
                         </span>
                     </summary>
-
                     <div class="interest-details">
                         <p>
-                           Спидкубинг — одно из моих главных
-                           увлечений. Обычный кубик 3×3
-                           я собираю в среднем примерно
-                           за 15 секунд.
+                            Спидкубинг — одно из моих главных
+                            увлечений. Обычный кубик 3×3
+                            я собираю в среднем примерно
+                            за 15 секунд.
                         </p>
-
                         <p>
                             Помимо него, по возможности
                             тренирую ещё девять дисциплин.
@@ -106,13 +88,10 @@
                     </div>
                 </details>
 
-                <!-- Музыка -->
                 <details class="interest-card">
                     <summary>
                         <span class="interest-number">02</span>
-                        <span class="interest-title">
-                            Музыка и барабаны
-                        </span>
+                        <span class="interest-title">Музыка и барабаны</span>
                         <span class="interest-short">
                             Русский рок, любимые группы
                             и первые шаги в игре на барабанах.
@@ -122,7 +101,6 @@
                             <span class="more-open">Свернуть −</span>
                         </span>
                     </summary>
-
                     <div class="interest-details">
                         <p>
                             Уже около пяти-шести лет
@@ -132,17 +110,15 @@
                             историю групп, альбомов
                             и отдельных песен.
                         </p>
-
                         <p>
                             Среди любимых исполнителей —
                             Кино, Наутилус Помпилиус,
                             Би-2, Агата Кристи, Земфира,
                             Сплин и другие.
                         </p>
-
                         <p>
-                            Около полугода назад
-                            у меня появилась барабанная установка.
+                            Около полугода назад у меня
+                            появилась барабанная установка.
                             Теперь я постепенно учусь
                             самостоятельно исполнять
                             любимые композиции.
@@ -150,13 +126,10 @@
                     </div>
                 </details>
 
-                <!-- Игры -->
                 <details class="interest-card">
                     <summary>
                         <span class="interest-number">03</span>
-                        <span class="interest-title">
-                            Игры и киберспорт
-                        </span>
+                        <span class="interest-title">Игры и киберспорт</span>
                         <span class="interest-short">
                             Standoff 2, тысячи часов практики
                             и интерес к профессиональной сцене.
@@ -166,14 +139,12 @@
                             <span class="more-open">Свернуть −</span>
                         </span>
                     </summary>
-
                     <div class="interest-details">
                         <p>
                             Когда-то я очень активно играл
                             в Standoff 2 и провёл в игре
                             более 2000 часов.
                         </p>
-
                         <p>
                             За это время я хорошо познакомился
                             с игрой, её историей
@@ -185,13 +156,10 @@
                     </div>
                 </details>
 
-                <!-- Пенспиннинг -->
                 <details class="interest-card">
                     <summary>
                         <span class="interest-number">04</span>
-                        <span class="interest-title">
-                            Пенспиннинг
-                        </span>
+                        <span class="interest-title">Пенспиннинг</span>
                         <span class="interest-short">
                             Трюки с ручкой, тренировки
                             и коллекция пенмодов.
@@ -201,7 +169,6 @@
                             <span class="more-open">Свернуть −</span>
                         </span>
                     </summary>
-
                     <div class="interest-details">
                         <p>
                             Пенспиннингом я увлекаюсь
@@ -209,14 +176,12 @@
                             За это время освоил немало
                             базовых трюков и связок.
                         </p>
-
                         <p>
                             Отдельный интерес для меня
                             представляют пенмоды —
                             специальные ручки для вращения.
                             Сейчас в моей коллекции 11 модов.
                         </p>
-
                         <p>
                             В последнее время тренируюсь
                             не так часто, но иногда
@@ -225,75 +190,125 @@
                         </p>
                     </div>
                 </details>
-
             </div>
         </section>
 
-        <section id="stories">
+        <section id="stories" class="fade-in">
+            <span class="section-label">ЗАМЕТКИ</span>
             <h2>Истории</h2>
-
             <p class="stories-intro">
                 Небольшие заметки, воспоминания
                 и интересные события из моей жизни.
             </p>
-
             <div class="stories-grid">
                 <article class="story-card">
-                    <button class="story-button" type="button">
-                        <span class="story-category">
-                            МУЗЫКА И МАТЕМАТИКА
-                        </span>
-
-                        <span class="story-title">
-                            Как музыка познакомила меня с числом e
-                        </span>
-
+                    <button class="story-button" data-story="music-math">
+                        <span class="story-category">МУЗЫКА И МАТЕМАТИКА</span>
+                        <span class="story-title">Как музыка познакомила меня с числом e</span>
                         <span class="story-description">
                             История о необычном изображении,
                             которое объединило музыку и математику.
                         </span>
-
-                        <span class="story-read">
-                            Читать историю →
-                        </span>
+                        <span class="story-read">Читать историю →</span>
                     </button>
                 </article>
             </div>
+            <p style="margin-top: 25px;">
+                <a href="stories.html" class="about-link">Открыть архив историй →</a>
+            </p>
         </section>
+
+        <!-- Секундомер для спидкубинга -->
+        <section id="timer" class="fade-in">
+            <span class="section-label">ТРЕНИРОВКА</span>
+            <h2>Секундомер для спидкубинга</h2>
+            <p class="stories-intro">
+                Удерживайте <kbd>пробел</kbd> около 0,5 секунды —
+                цифры станут зелёными. Отпустите — старт.
+                Повторное нажатие — стоп.
+            </p>
+            <div class="timer-box">
+                <div class="timer-hint" id="timer-hint">Удерживайте пробел</div>
+                <div class="timer-display" id="timer-display">00:00.00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn" id="timer-start">Старт</button>
+                    <button class="timer-btn" id="timer-reset">Сброс</button>
+            </div>
+
+        <div class="timer-stats">
+            <div class="timer-stat">
+                <span class="timer-stat-label">Лучшее</span>
+                <span class="timer-stat-value" id="stat-best">—</span>
+            </div>
+            <div class="timer-stat">
+                <span class="timer-stat-label">Последнее</span>
+                <span class="timer-stat-value" id="stat-last">—</span>
+            </div>
+            <div class="timer-stat">
+                <span class="timer-stat-label">AO5</span>
+                <span class="timer-stat-value" id="stat-ao5">—</span>
+            </div>
+            <div class="timer-stat">
+                <span class="timer-stat-label">AO12</span>
+                <span class="timer-stat-value" id="stat-ao12">—</span>
+            </div>
+        </div>
+
+        <div class="timer-history">
+            <div class="timer-history-header">
+                <h3>История сборок</h3>
+                <button class="timer-btn-small" id="timer-clear">Очистить</button>
+            </div>
+            <div class="timer-table-wrap">
+                <table class="timer-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Время</th>
+                            <th>AO5</th>
+                            <th>AO12</th>
+                            <th>Рекорд</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timer-history-body">
+                        <tr class="timer-empty-row">
+                            <td colspan="5">Пока пусто — сделайте первую сборку!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
     </main>
 
+    <!-- Модальное окно истории -->
     <dialog id="story-dialog" class="story-dialog">
         <div class="story-dialog-content">
-            <button
-                class="story-close"
-                type="button"
-                aria-label="Закрыть историю"
-            >
-                ×
-            </button>
-
-            <span class="story-category">
-                МУЗЫКА И МАТЕМАТИКА
-            </span>
-
-            <h2>Как музыка познакомила меня с числом e</h2>
-
-            <p>
-                Однажды мне встретилось необычное изображение,
-                состоящее из множества разноцветных квадратов.
-                Позже я узнал, что это визуализация цифр числа e.
-            </p>
-
-            <p>
-                Особенно интересно, что впервые я обратил
-                на неё внимание благодаря музыке.
-            </p>
+            <button class="story-close" aria-label="Закрыть">×</button>
+            <span class="story-category" id="dialog-category">МУЗЫКА И МАТЕМАТИКА</span>
+            <h2 id="dialog-title">Как музыка познакомила меня с числом e</h2>
+            <div id="dialog-body">
+                <p>
+                    Однажды мне встретилось необычное изображение,
+                    состоящее из множества разноцветных квадратов.
+                    Позже я узнал, что это визуализация цифр числа e.
+                </p>
+                <p>
+                    Особенно интересно, что впервые я обратил
+                    на неё внимание благодаря музыке.
+                </p>
+            </div>
         </div>
     </dialog>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-top" id="scroll-top" aria-label="Наверх">↑</button>
 
     <footer>
         <p>© 2026. Моя личная страница.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

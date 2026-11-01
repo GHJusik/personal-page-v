@@ -1,17 +1,12 @@
 /* ===== Цветовые темы ===== */
-/* ===== Светлая тема ===== */
-
 :root {
     --bg-color: #C9EEB0;
     --text-color: #486737;
     --secondary-text: #486737;
     --header-color: #ADD197;
     --link-hover: #314E23;
-
     --accent-color: #486737;
 }
-
-/* ===== Тёмная тема ===== */
 
 :root[data-theme="dark"] {
     --bg-color: #314E23;
@@ -19,7 +14,6 @@
     --secondary-text: #ADD197;
     --header-color: #3E5D30;
     --link-hover: #FFFFFF;
-
     --accent-color: #ADD197;
 }
 
@@ -27,7 +21,6 @@
     box-sizing: border-box;
 }
 
-/* ===== Общие настройки ===== */
 html {
     scroll-behavior: smooth;
     interpolate-size: allow-keywords;
@@ -40,8 +33,6 @@ body {
     color: var(--text-color);
     line-height: 1.6;
 }
-
-/* ===== Плавное переключение тем ===== */
 
 body,
 .site-header,
@@ -67,57 +58,100 @@ footer,
     transition: color 0.3s ease;
 }
 
+/* ===== Прогресс-бар скролла ===== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-color), var(--link-hover));
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+}
+
+/* ===== Кнопка "Наверх" ===== */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    background-color: var(--header-color);
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    z-index: 999;
+}
+.scroll-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.scroll-top:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* ===== Плавное появление секций ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ===== Шапка и навигация ===== */
 .site-header {
     background-color: var(--header-color);
 }
-
 .navbar {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
 }
-
 .logo {
     font-size: 20px;
     font-weight: bold;
     color: var(--text-color);
     text-decoration: none;
 }
-
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
+    flex-wrap: wrap;
 }
-
 .nav-links a {
     color: var(--secondary-text);
     text-decoration: none;
 }
-
 .nav-links a:hover {
     color: var(--link-hover);
 }
-
 #theme-toggle {
     padding: 8px 14px;
     border: 1px solid var(--secondary-text);
     border-radius: 6px;
-
     background-color: transparent;
     color: var(--text-color);
-
     font-family: inherit;
     font-size: 14px;
     cursor: pointer;
 }
-
 #theme-toggle:hover {
     background-color: var(--bg-color);
 }
@@ -126,72 +160,59 @@ footer,
     text-align: center;
     padding: 80px 20px;
 }
-
 .hero h1 {
     font-size: 40px;
     margin-bottom: 10px;
 }
 
-/* ===== Основное содержимое ===== */
 main {
     max-width: 900px;
     margin: 0 auto;
     padding: 40px 20px;
 }
-
 section {
     margin-bottom: 60px;
 }
-
 h2 {
     font-size: 28px;
 }
 
-/* ===== Раздел "Обо мне" ===== */
-
+/* ===== Обо мне ===== */
 .about-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 50px;
-
     padding: 40px 0;
 }
-
 .section-label {
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
     color: var(--accent-color);
 }
-
 .about-text h2 {
     font-size: 32px;
     margin: 15px 0;
 }
-
 .about-text p {
     color: var(--secondary-text);
     margin-bottom: 25px;
 }
-
 .about-link {
     display: inline-block;
     color: var(--accent-color);
     font-weight: bold;
     text-decoration: none;
 }
-
 .about-link:hover {
     text-decoration: underline;
 }
-
 .about-image {
     width: 100%;
     border-radius: 12px;
     overflow: hidden;
 }
-
 .about-image img {
     display: block;
     width: 100%;
@@ -199,115 +220,92 @@ h2 {
     border-radius: 12px;
 }
 
-/* ===== Раздел "Мои интересы" ===== */
-
+/* ===== Интересы ===== */
 .interests-intro {
     max-width: 650px;
     margin-bottom: 30px;
     color: var(--secondary-text);
 }
-
 .interests-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
     align-items: start;
 }
-
 .interest-card {
     min-width: 0;
     border-radius: 12px;
     background-color: var(--header-color);
     overflow: hidden;
-
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
         background-color 0.3s ease,
         color 0.3s ease;
 }
-
 .interest-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
-
 .interest-card summary {
     display: flex;
     flex-direction: column;
     gap: 10px;
-
     padding: 25px;
     cursor: pointer;
-
     list-style: none;
 }
-
 .interest-card summary::-webkit-details-marker {
     display: none;
 }
-
 .interest-number {
     font-size: 13px;
     font-weight: bold;
     color: var(--accent-color);
 }
-
 .interest-title {
     font-size: 22px;
     font-weight: bold;
     color: var(--text-color);
 }
-
 .interest-short {
     color: var(--secondary-text);
 }
-
 .interest-more {
     margin-top: 10px;
     font-weight: bold;
     color: var(--accent-color);
 }
-
 .more-open {
     display: none;
 }
-
 .interest-card[open] .more-closed {
     display: none;
 }
-
 .interest-card[open] .more-open {
     display: inline;
 }
-
 .interest-details {
     padding: 0 25px 25px;
     color: var(--secondary-text);
 }
-
 .interest-details p {
     margin-top: 0;
 }
-
 .interest-details p:last-child {
     margin-bottom: 0;
 }
-
 .interest-card summary:focus-visible {
     outline: 3px solid var(--accent-color);
     outline-offset: -3px;
 }
-
 .interest-card:hover .interest-more {
     text-decoration: underline;
 }
-
 .interest-card[open] {
     outline: 2px solid var(--accent-color);
     outline-offset: -2px;
 }
-
 .interest-card::details-content {
     height: 0;
     overflow: hidden;
@@ -315,74 +313,61 @@ h2 {
         height 0.35s ease,
         content-visibility 0.35s allow-discrete;
 }
-
 .interest-card[open]::details-content {
     height: auto;
 }
-
 .interest-card[open] .interest-details {
     cursor: pointer;
 }
 
-/* ===== Раздел "Истории" ===== */
-
+/* ===== Истории ===== */
 .stories-intro {
     max-width: 650px;
     margin-bottom: 30px;
     color: var(--secondary-text);
 }
-
 .stories-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
-
 .story-card {
     border-radius: 12px;
     background-color: var(--header-color);
     overflow: hidden;
-
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
         background-color 0.3s ease;
 }
-
 .story-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
-
 .story-button {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
-
     width: 100%;
     padding: 30px;
     border: none;
     background: none;
     color: var(--text-color);
-
     font: inherit;
     text-align: left;
     cursor: pointer;
 }
-
 .story-title {
     display: block;
     font-size: 24px;
     font-weight: bold;
     line-height: 1.4;
 }
-
 .story-description {
     display: block;
     color: var(--secondary-text);
 }
-
 .story-read {
     display: block;
     align-self: flex-end;
@@ -390,11 +375,9 @@ h2 {
     color: var(--accent-color);
     font-weight: bold;
 }
-
 .story-card:hover .story-read {
     text-decoration: underline;
 }
-
 .story-category {
     font-size: 12px;
     font-weight: bold;
@@ -402,134 +385,276 @@ h2 {
     color: var(--accent-color);
 }
 
-.story-button,
-.story-category,
-.story-description,
-.story-read {
-    transition: color 0.3s ease;
-}
-
-/* ===== Всплывающее окно ===== */
-
+/* ===== Модальное окно ===== */
 .story-dialog {
     width: min(600px, calc(100% - 40px));
     max-height: 85vh;
     padding: 0;
     border: none;
     border-radius: 12px;
-
     background-color: var(--bg-color);
     color: var(--text-color);
-
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
 }
-
 .story-dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.6);
 }
-
 .story-dialog-content {
     position: relative;
     padding: 35px;
 }
-
 .story-dialog h2 {
     margin: 15px 0 20px;
     font-size: 28px;
 }
-
 .story-dialog p {
     color: var(--secondary-text);
 }
-
 .story-dialog[open] {
     animation: dialog-appear 0.3s ease-out;
 }
-
 @keyframes dialog-appear {
-    from {
-        opacity: 0;
-        transform: translateY(15px) scale(0.98);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    from { opacity: 0; transform: translateY(15px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
-
 .story-dialog[open]::backdrop {
     animation: backdrop-appear 0.3s ease-out;
 }
-
 @keyframes backdrop-appear {
-    from {
-        background-color: rgba(0, 0, 0, 0);
-    }
-
-    to {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
+    from { background-color: rgba(0, 0, 0, 0); }
+    to { background-color: rgba(0, 0, 0, 0.6); }
 }
-
 .story-close {
     position: absolute;
     top: 15px;
     right: 20px;
-
     border: none;
     background: none;
     color: var(--text-color);
-
     font-size: 30px;
     line-height: 1;
     cursor: pointer;
 }
-
 .story-close:hover {
     color: var(--link-hover);
 }
-
 .story-close:focus-visible {
     outline: 3px solid var(--accent-color);
     outline-offset: 4px;
 }
-
 .story-button:focus-visible {
     outline: 3px solid var(--accent-color);
     outline-offset: -3px;
 }
-
-/* ===== Плавное закрытие истории ===== */
-
 .story-dialog[open].closing {
     animation: dialog-disappear 0.3s ease-in forwards;
 }
-
 .story-dialog[open].closing::backdrop {
     animation: backdrop-disappear 0.3s ease-in forwards;
 }
-
 @keyframes dialog-disappear {
-    from {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(15px) scale(0.98);
-    }
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(15px) scale(0.98); }
+}
+@keyframes backdrop-disappear {
+    from { background-color: rgba(0, 0, 0, 0.6); }
+    to { background-color: rgba(0, 0, 0, 0); }
 }
 
-@keyframes backdrop-disappear {
-    from {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    to {
-        background-color: rgba(0, 0, 0, 0);
-    }
+/* ===== Секундомер ===== */
+.timer-box {
+    background-color: var(--header-color);
+    border-radius: 12px;
+    padding: 35px;
+    text-align: center;
+}
+.timer-hint {
+    font-size: 14px;
+    color: var(--secondary-text);
+    margin-bottom: 10px;
+    min-height: 20px;
+    letter-spacing: 0.5px;
+}
+.timer-display {
+    font-size: 80px;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-family: 'Courier New', monospace;
+    user-select: none;
+    transition: color 0.15s ease;
+    min-height: 1.2em;
+}
+.timer-display.state-holding {
+    color: var(--secondary-text);
+    opacity: 0.6;
+}
+.timer-display.state-ready {
+    color: #22c55e;
+}
+.timer-display.state-running {
+    color: #ef4444;
+}
+:root[data-theme="dark"] .timer-display.state-ready {
+    color: #4ade80;
+}
+:root[data-theme="dark"] .timer-display.state-running {
+    color: #f87171;
+}
+.timer-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.timer-btn {
+    padding: 12px 28px;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.timer-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+.timer-btn-small {
+    padding: 6px 14px;
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.timer-btn-small:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+.timer-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+.timer-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.timer-stat-label {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--secondary-text);
+    text-transform: uppercase;
+}
+.timer-stat-value {
+    font-size: 20px;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    font-family: 'Courier New', monospace;
+    color: var(--text-color);
+}
+.timer-history {
+    text-align: left;
+    border-top: 1px solid var(--accent-color);
+    padding-top: 20px;
+}
+.timer-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.timer-history-header h3 {
+    font-size: 18px;
+    margin: 0;
+    color: var(--text-color);
+}
+.timer-table-wrap {
+    max-height: 420px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+}
+.timer-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+    font-family: 'Courier New', monospace;
+}
+.timer-table thead {
+    position: sticky;
+    top: 0;
+    background-color: var(--header-color);
+    z-index: 1;
+}
+.timer-table th,
+.timer-table td {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--accent-color);
+    font-size: 14px;
+}
+.timer-table th {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: var(--text-color);
+    letter-spacing: 0.5px;
+}
+.timer-table td {
+    color: var(--secondary-text);
+}
+.timer-table tbody tr:hover {
+    background-color: var(--header-color);
+}
+.timer-table .pb-mark {
+    color: #f59e0b;
+    font-weight: bold;
+    font-size: 16px;
+}
+:root[data-theme="dark"] .timer-table .pb-mark {
+    color: #fbbf24;
+}
+.timer-empty-row td {
+    text-align: center;
+    font-style: italic;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: var(--secondary-text);
+}
+.timer-table-wrap::-webkit-scrollbar {
+    width: 8px;
+}
+.timer-table-wrap::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+.timer-table-wrap::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+kbd {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    background-color: var(--header-color);
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: var(--text-color);
 }
 
 footer {
@@ -543,61 +668,73 @@ footer {
     .navbar {
         flex-direction: column;
     }
-
     .nav-links {
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-
     .hero {
         padding: 50px 20px;
     }
-
     .hero h1 {
         font-size: 30px;
     }
-
     .about-section {
         grid-template-columns: 1fr;
         gap: 25px;
         padding: 20px 0;
     }
-
     .about-text h2 {
         font-size: 26px;
     }
-
     .interests-grid {
         grid-template-columns: 1fr;
     }
-
     .interest-card summary {
         padding: 20px;
     }
-
     .interest-details {
         padding: 0 20px 20px;
     }
-
     .interest-title {
         font-size: 20px;
     }
-
     .story-button {
         padding: 22px;
     }
-
     .story-title {
         font-size: 21px;
     }
-
     .story-dialog-content {
         padding: 25px;
     }
-
     .story-dialog h2 {
         font-size: 24px;
+    }
+    .timer-display {
+        font-size: 52px;
+    }
+    .timer-box {
+        padding: 25px;
+    }
+    .timer-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 15px;
+    }
+    .timer-stat-value {
+        font-size: 17px;
+    }
+    .timer-table th,
+    .timer-table td {
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+    .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
     }
 }
 
@@ -605,7 +742,17 @@ footer {
     html {
         scroll-behavior: auto;
     }
-
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .scroll-progress {
+        transition: none;
+    }
+    .scroll-top {
+        transition: none;
+    }
     .interest-card,
     .interest-card::details-content,
     body,
@@ -629,24 +776,19 @@ footer {
     .story-read {
         transition: none;
     }
-
     .interest-card:hover {
         transform: none;
     }
-
     .story-card {
         transition: none;
     }
-
     .story-card:hover {
         transform: none;
     }
-
     .story-dialog[open],
     .story-dialog[open]::backdrop {
         animation: none;
     }
-
     .story-dialog[open].closing,
     .story-dialog[open].closing::backdrop {
         animation: none;
