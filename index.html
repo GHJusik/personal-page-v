@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя личная страница</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="#" class="logo">Личная страница.</a>
+
+            <div class="nav-links">
+                <a href="#about">Обо мне</a>
+                <a href="#interests">Интересы</a>
+                <a href="#stories">Истории</a>
+
+                <button id="theme-toggle" type="button">
+                    Тёмная тема
+                </button>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <h1>Привет! Я Вова.</h1>
+            <p>Добро пожаловать на мою личную страницу!</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <div class="about-text">
+                <span class="section-label">ЗНАКОМСТВО</span>
+
+                <h2>Немного обо мне</h2>
+
+                <p>
+                    Привет! Это моя личная страница,
+                    где я делюсь тем, что мне интересно,
+                    рассказываю о своих увлечениях
+                    и сохраняю небольшие истории.
+                </p>
+
+                <a href="#interests" class="about-link">
+                    Мои интересы →
+                </a>
+            </div>
+
+            <div class="about-image">
+                <img
+                    src="images/avatar-v.jpg"
+                    alt="Цветной ковёр числа «е»"
+                >
+            </div>
+        </section>
+
+        <section id="interests">
+            <h2>Мои интересы</h2>
+
+            <p class="interests-intro">
+                Здесь я собрал несколько увлечений,
+                которые занимают особое место в моей жизни.
+                Нажми на интересующую карточку,
+                чтобы узнать о ней подробнее.
+            </p>
+
+            <div class="interests-grid">
+
+                <!-- Спидкубинг -->
+                <details class="interest-card">
+                    <summary>
+                        <span class="interest-number">01</span>
+                        <span class="interest-title">
+                            Спидкубинг
+                        </span>
+                        <span class="interest-short">
+                            Почти 9 лет собираю кубик Рубика
+                            и другие головоломки на скорость.
+                        </span>
+                        <span class="interest-more">
+                            <span class="more-closed">Подробнее +</span>
+                            <span class="more-open">Свернуть −</span>
+                        </span>
+                    </summary>
+
+                    <div class="interest-details">
+                        <p>
+                           Спидкубинг — одно из моих главных
+                           увлечений. Обычный кубик 3×3
+                           я собираю в среднем примерно
+                           за 15 секунд.
+                        </p>
+
+                        <p>
+                            Помимо него, по возможности
+                            тренирую ещё девять дисциплин.
+                            Также участвую в местных
+                            соревнованиях и помогаю
+                            в их организации в роли
+                            скрамблёра.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- Музыка -->
+                <details class="interest-card">
+                    <summary>
+                        <span class="interest-number">02</span>
+                        <span class="interest-title">
+                            Музыка и барабаны
+                        </span>
+                        <span class="interest-short">
+                            Русский рок, любимые группы
+                            и первые шаги в игре на барабанах.
+                        </span>
+                        <span class="interest-more">
+                            <span class="more-closed">Подробнее +</span>
+                            <span class="more-open">Свернуть −</span>
+                        </span>
+                    </summary>
+
+                    <div class="interest-details">
+                        <p>
+                            Уже около пяти-шести лет
+                            я активно увлекаюсь русским роком.
+                            Мне интересно не только слушать
+                            музыку, но и изучать дискографии,
+                            историю групп, альбомов
+                            и отдельных песен.
+                        </p>
+
+                        <p>
+                            Среди любимых исполнителей —
+                            Кино, Наутилус Помпилиус,
+                            Би-2, Агата Кристи, Земфира,
+                            Сплин и другие.
+                        </p>
+
+                        <p>
+                            Около полугода назад
+                            у меня появилась барабанная установка.
+                            Теперь я постепенно учусь
+                            самостоятельно исполнять
+                            любимые композиции.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- Игры -->
+                <details class="interest-card">
+                    <summary>
+                        <span class="interest-number">03</span>
+                        <span class="interest-title">
+                            Игры и киберспорт
+                        </span>
+                        <span class="interest-short">
+                            Standoff 2, тысячи часов практики
+                            и интерес к профессиональной сцене.
+                        </span>
+                        <span class="interest-more">
+                            <span class="more-closed">Подробнее +</span>
+                            <span class="more-open">Свернуть −</span>
+                        </span>
+                    </summary>
+
+                    <div class="interest-details">
+                        <p>
+                            Когда-то я очень активно играл
+                            в Standoff 2 и провёл в игре
+                            более 2000 часов.
+                        </p>
+
+                        <p>
+                            За это время я хорошо познакомился
+                            с игрой, её историей
+                            и профессиональной сценой.
+                            Сейчас играю значительно реже,
+                            но продолжаю следить за обновлениями
+                            и иногда с удовольствием возвращаюсь.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- Пенспиннинг -->
+                <details class="interest-card">
+                    <summary>
+                        <span class="interest-number">04</span>
+                        <span class="interest-title">
+                            Пенспиннинг
+                        </span>
+                        <span class="interest-short">
+                            Трюки с ручкой, тренировки
+                            и коллекция пенмодов.
+                        </span>
+                        <span class="interest-more">
+                            <span class="more-closed">Подробнее +</span>
+                            <span class="more-open">Свернуть −</span>
+                        </span>
+                    </summary>
+
+                    <div class="interest-details">
+                        <p>
+                            Пенспиннингом я увлекаюсь
+                            около пяти лет.
+                            За это время освоил немало
+                            базовых трюков и связок.
+                        </p>
+
+                        <p>
+                            Отдельный интерес для меня
+                            представляют пенмоды —
+                            специальные ручки для вращения.
+                            Сейчас в моей коллекции 11 модов.
+                        </p>
+
+                        <p>
+                            В последнее время тренируюсь
+                            не так часто, но иногда
+                            с удовольствием возвращаюсь
+                            к этому занятию.
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+        <section id="stories">
+            <h2>Истории</h2>
+
+            <p class="stories-intro">
+                Небольшие заметки, воспоминания
+                и интересные события из моей жизни.
+            </p>
+
+            <div class="stories-grid">
+                <article class="story-card">
+                    <button class="story-button" type="button">
+                        <span class="story-category">
+                            МУЗЫКА И МАТЕМАТИКА
+                        </span>
+
+                        <span class="story-title">
+                            Как музыка познакомила меня с числом e
+                        </span>
+
+                        <span class="story-description">
+                            История о необычном изображении,
+                            которое объединило музыку и математику.
+                        </span>
+
+                        <span class="story-read">
+                            Читать историю →
+                        </span>
+                    </button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="story-dialog" class="story-dialog">
+        <div class="story-dialog-content">
+            <button
+                class="story-close"
+                type="button"
+                aria-label="Закрыть историю"
+            >
+                ×
+            </button>
+
+            <span class="story-category">
+                МУЗЫКА И МАТЕМАТИКА
+            </span>
+
+            <h2>Как музыка познакомила меня с числом e</h2>
+
+            <p>
+                Однажды мне встретилось необычное изображение,
+                состоящее из множества разноцветных квадратов.
+                Позже я узнал, что это визуализация цифр числа e.
+            </p>
+
+            <p>
+                Особенно интересно, что впервые я обратил
+                на неё внимание благодаря музыке.
+            </p>
+        </div>
+    </dialog>
+
+    <footer>
+        <p>© 2026. Моя личная страница.</p>
+    </footer>
+
+</body>
+</html>
